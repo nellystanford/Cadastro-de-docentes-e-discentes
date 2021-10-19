@@ -69,7 +69,7 @@ int main () {
                 for(int i=0; i<countDisc; i++) {
                     disc[i].exibePessoas();
                 }
-                cout << "Precione enter para continuar..." << endl;
+                cout << "Pressione enter para continuar..." << endl;
                 cin.ignore();
                 getchar();
                 break;
