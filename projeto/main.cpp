@@ -115,13 +115,8 @@ int main () {
 
                 break;
 
-            // exportação de cadastros para arquivo:
-            case 5:
-
-                break;
-
             // sair do programa
-            case 6:
+            case 5:
                 break;
             
             default:
