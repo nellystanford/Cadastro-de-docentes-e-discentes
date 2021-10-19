@@ -12,12 +12,11 @@ void Menu::MenuEntrada() {
 void Menu::MenuPrincipal() {
     cout << "----------------------------------------------------------------" << endl;
     cout << "Selecione uma das opções a seguir:                              " << endl;
-    cout << "1 - Cadastrar Docente                                            " << endl;
-    cout << "2 - Cadastrar Discente                                           " << endl;
-    cout << "3 - Consultar cadastros                                          " << endl;
-    cout << "4 - Remover cadastro                                             " << endl;
-    cout << "5 - Exportar cadastros para tabela                               " << endl;
-    cout << "6 - Sair                                                         " << endl;
+    cout << "1 - Cadastrar Docente                                           " << endl;
+    cout << "2 - Cadastrar Discente                                          " << endl;
+    cout << "3 - Consultar cadastros                                         " << endl;
+    cout << "4 - Remover cadastro                                            " << endl;
+    cout << "5 - Sair                                                        " << endl;
     cout << "----------------------------------------------------------------" << endl;
 }
 
