@@ -11,7 +11,6 @@ void Docente::leAtributos() {
 
     cout << "Digite a cadeira que o Docente ensina: " << endl;
     getline(cin, cadeiraEnsinada);
-
 }
 
 void Docente::exibePessoas() {

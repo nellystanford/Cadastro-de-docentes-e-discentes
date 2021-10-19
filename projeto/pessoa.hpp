@@ -6,9 +6,9 @@
 class Pessoa {
     protected:
         std::string nome;
+        std::string sexo;
         Endereco endereco;
         int idade;
-        std::string sexo;
 
     public:
         Pessoa();
