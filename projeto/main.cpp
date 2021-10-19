@@ -10,8 +10,6 @@
 using namespace std;
 
 int main () {
-    //Docente doc[100];
-    //Discente disc[100];
     vector<Docente>doc(100);
     vector<Discente>disc(100);
     Menu menu;
