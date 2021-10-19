@@ -55,7 +55,7 @@ int main () {
             case 3:
                 system(CLEAR);
                 cout << "        " << endl;
-                cout << "DOCENTES" << endl;
+                cout << "DOCENTES: " << countDoc << endl;
                 cout << "        " << endl;
 
                 for(int i=0; i<countDoc; i++) {
@@ -63,7 +63,7 @@ int main () {
                 }
 
                 cout << "         " << endl;
-                cout << "DISCENTES" << endl;
+                cout << "DISCENTES: " << countDisc << endl;
                 cout << "         " << endl;
 
                 for(int i=0; i<countDisc; i++) {
@@ -96,6 +96,8 @@ int main () {
 
                             doc.erase(doc.begin() + numRemocao - 1);
                             countDoc--;
+                            cout << "Docente removido com sucesso!" << endl;
+                            sleep(1.5);
 
                             break;
 
@@ -114,7 +116,8 @@ int main () {
 
                             disc.erase(disc.begin() + numRemocao - 1);
                             countDisc--;
-
+                            cout << "Discente removido com sucesso!" << endl;
+                            sleep(1.5);
                             break;
 
                         //voltar para o menu principal

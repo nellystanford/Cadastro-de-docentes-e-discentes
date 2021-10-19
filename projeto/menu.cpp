@@ -8,7 +8,7 @@ void Menu::MenuEntrada() {
         cout << "         Bem-vindo ao cadastro de docentes e discentes          " << endl;
         cout << "----------------------------------------------------------------" << endl;
         cout << "Timer: " << i << endl;
-        sleep(0.2);
+        sleep(1);
         system(CLEAR);
     }
 }

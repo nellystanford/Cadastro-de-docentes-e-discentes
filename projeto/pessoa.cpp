@@ -37,6 +37,7 @@ void Pessoa::exibePessoas() {
 }
 
 void Pessoa::exibeNomes() {
+    cout << endl;
     cout << "----------------------------------------------------------------" << endl;
     cout << "Nome: " << nome << endl;
     cout << "----------------------------------------------------------------" << endl;
