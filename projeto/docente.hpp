@@ -10,6 +10,5 @@ class Docente : public Pessoa {
         void leAtributos();
         void exibePessoas();
         void exibeNomes();
-
-        std::string getCadeiraEnsinada();
+        void exportaArquivo(std::string nomeArquivo);
 };
