@@ -1,4 +1,5 @@
 #include "pessoa.hpp"
+#include <fstream>
 
 using namespace std;
 
@@ -43,17 +44,24 @@ void Pessoa::exibeNomes() {
     cout << "----------------------------------------------------------------" << endl;
 }
 
-std::string Pessoa::getNome() {
-    return nome;
-}
+void Pessoa::exportaArquivo(std::string nomeArquivo) {
+    // objeto para acessar o arquivo
+    ofstream arq;
+    // abertura do arquivo para escrita ao final dos dados já existentes
+    arq.open(nomeArquivo, ios::app);
 
-std::string Pessoa::getSexo() {
-    return sexo;
-}
-Endereco Pessoa::getEndereco() {
-    return endereco;
-}
+    //verificação de erro na abertura do arquivo
+    if (!arq.is_open()) {
+        cout << "Erro ao abrir o arquivo" << endl;
+        return;
+    }
 
-int Pessoa::getIdade() {
-    return idade;
+    arq << "-----------------------------------------------" << endl;
+    arq << "Nome: " << nome << endl;
+    arq << "Sexo: " << sexo << endl;
+    arq << "Endereco: " << endereco.rua << ", " << endereco.bairro << ". " << endereco.CEP << "." << endl;
+    arq << "Idade: " << idade << endl;
+
+    // fechamento do arquivo
+    arq.close();
 }
