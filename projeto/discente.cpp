@@ -28,3 +28,11 @@ void Discente::exibePessoas() {
 void Discente::exibeNomes() {
     Pessoa::exibeNomes();
 }
+
+int Discente::getAnoEntrada() {
+    return anoEntrada;
+}
+
+float Discente::getCRA() {
+    return CRA;
+}
