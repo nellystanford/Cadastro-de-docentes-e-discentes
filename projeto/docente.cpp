@@ -23,3 +23,7 @@ void Docente::exibePessoas() {
 void Docente::exibeNomes() {
     Pessoa::exibeNomes();
 }
+
+string Docente::getCadeiraEnsinada() {
+    return cadeiraEnsinada;
+}
