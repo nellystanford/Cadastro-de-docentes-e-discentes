@@ -1,4 +1,5 @@
 #include "docente.hpp"
+#include <fstream>
 
 using namespace std;
 
@@ -24,6 +25,14 @@ void Docente::exibeNomes() {
     Pessoa::exibeNomes();
 }
 
-string Docente::getCadeiraEnsinada() {
-    return cadeiraEnsinada;
+void Docente::exportaArquivo(std::string nomeArquivo) {
+    Pessoa::exportaArquivo(nomeArquivo);
+
+    ofstream arq;
+    arq.open(nomeArquivo, ios::app);
+
+    arq << "Cadeira ensinada: " << cadeiraEnsinada << endl;
+    arq << "-----------------------------------------------" << endl;
+
+    arq.close();
 }
