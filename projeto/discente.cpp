@@ -30,14 +30,6 @@ void Discente::exibeNomes() {
     Pessoa::exibeNomes();
 }
 
-/*int Discente::getAnoEntrada() {
-    return anoEntrada;
-}
-
-float Discente::getCRA() {
-    return CRA;
-}*/
-
 void Discente::exportaArquivo(std::string nomeArquivo) {
     Pessoa::exportaArquivo(nomeArquivo);
 
