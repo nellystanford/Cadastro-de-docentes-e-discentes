@@ -13,9 +13,6 @@ int main () {
     int op = 1, op2 = 0;
     int countDoc = 0, countDisc = 0;
 
-    // objeto para acessar o arquivo
-    ofstream arq;
-
     Menu menu;
 
     // menu de boas-vindas
@@ -142,50 +139,15 @@ int main () {
 
                 system(CLEAR);
 
-                //abertura do arquivo paa escrita ao final dos dados já existentes
-                arq.open("arquivo.txt", ios::app);
-
-                //verificação de erro na abertura do arquivo
-                if (!arq.is_open()) {
-                    cout << "Erro ao abrir o arquivo" << endl;
-                    sleep(2);
-                    break;
-                }
-
-                arq << "DOCENTES: " << countDoc << endl;
-               /* for(int i=0; i<countDoc; i++) {
-                    doc[i].escrevePessoas(arq);
-                }*/
-
                 for(int i=0; i<countDoc; i++) {
-                    arq << "-----------------------------------------------" << endl;
-                    arq << "Nome: " << doc[i].getNome() << endl;
-                    arq << "Sexo: " << doc[i].getSexo() << endl;
-                    arq << "Endereco: " << doc[i].getEndereco().rua << ", " << 
-                    doc[i].getEndereco().bairro << ". " << doc[i].getEndereco().CEP << "." << endl;
-                    arq << "Idade: " << doc[i].getIdade() << endl;
-                    arq << "Cadeira ensinada: " << doc[i].getCadeiraEnsinada() << endl;
-                    arq << "-----------------------------------------------" << endl;
+                    doc[i].exportaArquivo("docentes.txt");
                 }
-
-                arq << endl;
-                arq << "DISCENTES: " << countDisc << endl;
 
                 for(int i=0; i<countDisc; i++) {
-                    arq << "-----------------------------------------------" << endl;
-                    arq << "Nome: " << disc[i].getNome() << endl;
-                    arq << "Sexo: " << disc[i].getSexo() << endl;
-                    arq << "Endereco: " << disc[i].getEndereco().rua << ", " << 
-                    doc[i].getEndereco().bairro << ". " << disc[i].getEndereco().CEP << "." << endl;
-                    arq << "Idade: " << disc[i].getIdade() << endl;
-                    arq << "Ano de Entrada: " << disc[i].getAnoEntrada() << endl;
-                    arq << "CRA: " << disc[i].getCRA() << endl;
-                    arq << "-----------------------------------------------" << endl;
+                    disc[i].exportaArquivo("discentes.txt");
                 }
 
-                arq.close();
-
-                cout << "Arquivo exportado com sucesso!" << endl;
+                cout << "Arquivos exportados com sucesso!" << endl;
                 cout << "Pressione enter para continuar..." << endl;
                 cin.ignore();
                 getchar();
