@@ -11,7 +11,5 @@ class Discente : public Pessoa {
         void leAtributos();
         void exibePessoas();
         void exibeNomes();
-
-        int getAnoEntrada();
-        float getCRA();
+        void exportaArquivo(std::string nomeArquivo);
 };
