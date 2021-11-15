@@ -42,3 +42,18 @@ void Pessoa::exibeNomes() {
     cout << "Nome: " << nome << endl;
     cout << "----------------------------------------------------------------" << endl;
 }
+
+std::string Pessoa::getNome() {
+    return nome;
+}
+
+std::string Pessoa::getSexo() {
+    return sexo;
+}
+Endereco Pessoa::getEndereco() {
+    return endereco;
+}
+
+int Pessoa::getIdade() {
+    return idade;
+}
