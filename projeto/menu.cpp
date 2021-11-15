@@ -20,6 +20,7 @@ void Menu::MenuPrincipal() {
     cout << "2 - Cadastrar Discente                                          " << endl;
     cout << "3 - Consultar cadastros                                         " << endl;
     cout << "4 - Remover cadastro                                            " << endl;
+    cout << "5 - Exportar cadastros                                          " << endl;
     cout << "0 - Sair                                                        " << endl;
     cout << "----------------------------------------------------------------" << endl;
 }
