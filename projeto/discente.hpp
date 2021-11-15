@@ -12,4 +12,6 @@ class Discente : public Pessoa {
         void exibePessoas();
         void exibeNomes();
 
+        int getAnoEntrada();
+        float getCRA();
 };
