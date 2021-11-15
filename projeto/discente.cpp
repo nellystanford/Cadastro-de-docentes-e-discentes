@@ -1,4 +1,5 @@
 #include "discente.hpp"
+#include <fstream>
 
 using namespace std;
 
@@ -29,10 +30,23 @@ void Discente::exibeNomes() {
     Pessoa::exibeNomes();
 }
 
-int Discente::getAnoEntrada() {
+/*int Discente::getAnoEntrada() {
     return anoEntrada;
 }
 
 float Discente::getCRA() {
     return CRA;
+}*/
+
+void Discente::exportaArquivo(std::string nomeArquivo) {
+    Pessoa::exportaArquivo(nomeArquivo);
+
+    ofstream arq;
+    arq.open("discentes.txt", ios::app);
+
+    arq << "Ano de Entrada: " << anoEntrada << endl;
+    arq << "CRA: " << CRA << endl;
+    arq << "-----------------------------------------------" << endl;
+
+    arq.close();
 }
