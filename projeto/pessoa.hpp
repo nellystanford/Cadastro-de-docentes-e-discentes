@@ -16,9 +16,5 @@ class Pessoa {
         virtual void leAtributos() = 0;
         virtual void exibePessoas() = 0;
         virtual void exibeNomes() = 0;
-
-        std::string getNome();
-        std::string getSexo();
-        Endereco getEndereco();
-        int getIdade();
+        virtual void exportaArquivo(std::string nomeArquivo) = 0;
 };
