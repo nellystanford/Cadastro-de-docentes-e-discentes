@@ -1,10 +1,14 @@
 #include "includes.hpp"
 #include <fstream>
+#include <exception>
+
+#define MAX_LENGTH_DISC 2
+#define MAX_LENGTH_DOSC 2
 
 using namespace std;
 
-vector <Discente> disc(100);
-vector <Docente> doc(100);
+vector <Discente> disc(MAX_LENGTH_DISC);
+vector <Docente> doc(MAX_LENGTH_DOSC);
 
 int main () {
     system(CLEAR);
@@ -30,27 +34,65 @@ int main () {
             // sair do programa
             case 0:
                 break;
+
             // cadastro docente:
             case 1:
                 system(CLEAR);
 
-                doc[countDoc].leAtributos();
-                cout << endl;
-                cout << "Docente adicionado com sucesso!" << endl;
-                countDoc++;
-                sleep(1.5);
-                break;
+                try
+                {
+                    if(countDoc < MAX_LENGTH_DOSC)
+                    {
+                        doc[countDoc].leAtributos();
+                        countDoc++;
+                    }
+                    else
+                    {
+                        throw "Limite de docentes atingido!";
+                        break;
+                    } 
+                    
+                    cout << endl;
+                    cout << "Docente adicionado com sucesso!" << endl;
+                    sleep(2);
+                    break;    
+                }
+                catch(const char* msg)
+                {
+                    cout << msg << endl;
+                    sleep(2);
+                    break;
+                }
+
 
             // cadastro discente:
             case 2:
                 system(CLEAR);
 
-                disc[countDisc].leAtributos();
-                cout << endl;
-                cout << "Discente adicionado com sucesso!" << endl;
-                countDisc++;
-                sleep(1.5);
-                break;
+                try
+                {
+                    if(countDisc < MAX_LENGTH_DISC)
+                    {
+                        disc[countDisc].leAtributos();
+                        countDisc++;
+                    }
+                    else
+                    {
+                        throw "Limite de discentes atingido!";
+                        break;
+                    } 
+                    
+                    cout << endl;
+                    cout << "Discente adicionado com sucesso!" << endl;
+                    sleep(2);
+                    break;    
+                }
+                catch(const char* msg)
+                {
+                    cout << msg << endl;
+                    sleep(2);
+                    break;
+                }
 
             // consulta de cadastros:
             case 3:
@@ -70,6 +112,7 @@ int main () {
                 for(int i=0; i<countDisc; i++) {
                     disc[i].exibePessoas();
                 }
+                
                 cout << "Pressione enter para continuar..." << endl;
                 cin.ignore();
                 getchar();
@@ -95,8 +138,28 @@ int main () {
                             cout << "Digite o número do docente que deseja remover: " << endl;
                             cin >> numRemocao;
 
-                            doc.erase(doc.begin() + numRemocao - 1);
-                            countDoc--;
+                            try
+                            {
+                                if(numRemocao > countDoc)
+                                {
+                                    throw "Número de docente inválido!";
+                                    break;
+                                } 
+                                else
+                                {
+                                doc.erase(doc.begin() + numRemocao - 1);
+                                countDoc--;
+                                }
+                            }
+                            catch(const char* msg)
+                            {
+                                system(CLEAR);
+                                std::cerr << msg << '\n';
+                                sleep(2);
+                                break;
+                            }
+                            
+
                             cout << "Docente removido com sucesso!" << endl;
                             sleep(1.5);
 
@@ -115,8 +178,27 @@ int main () {
                             cout << "Digite o número do discente que deseja remover: " << endl;
                             cin >> numRemocao;
 
-                            disc.erase(disc.begin() + numRemocao - 1);
-                            countDisc--;
+                            try
+                            {
+                                if(numRemocao > countDisc)
+                                {
+                                    throw "Número de discente inválido!";
+                                    break;
+                                } 
+                                else
+                                {
+                                    disc.erase(disc.begin() + numRemocao - 1);
+                                    countDisc--;
+                                }
+                            }
+                            catch(const char* msg)
+                            {
+                                system(CLEAR);
+                                std::cerr << msg << '\n';
+                                sleep(2);
+                                break;
+                            }
+                            
                             cout << "Discente removido com sucesso!" << endl;
                             sleep(1.5);
                             break;
