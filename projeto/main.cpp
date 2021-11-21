@@ -101,7 +101,8 @@ int main () {
                 cout << "DOCENTES: " << countDoc << endl;
                 cout << "        " << endl;
 
-                for(int i=0; i<countDoc; i++) {
+                for(int i=0; i<countDoc; i++)
+                {
                     doc[i].exibePessoas();
                 }
 
@@ -109,7 +110,8 @@ int main () {
                 cout << "DISCENTES: " << countDisc << endl;
                 cout << "         " << endl;
 
-                for(int i=0; i<countDisc; i++) {
+                for(int i=0; i<countDisc; i++)
+                {
                     disc[i].exibePessoas();
                 }
                 
